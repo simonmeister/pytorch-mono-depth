@@ -1,3 +1,5 @@
+## Experimental research code - not part of the depth prediction re-implementation
+
 import torch
 from torch.autograd import Variable
 import numpy as np

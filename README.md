@@ -11,8 +11,8 @@ This implementation supports data pre-processing, training from scratch, and eva
 
 ### Install prerequisites
 * install [pytorch](https://pytorch.org/)
-* install [tensorflow](https://www.tensorflow.org/) (for tensorboard visualization only - no gpu support required). The easiest way is to just install the pip `tensorflow` package.
-* install python packages with pip: `scipy matplotlib h5py`
+* install [tensorflow](https://www.tensorflow.org/) (for tensorboard visualization only - no gpu support required). The easiest way is to run `pip install tensorflow`.
+* install other python packages: `pip install scipy matplotlib h5py`
 
 ### Prepare datasets
 * `python nyud_test_to_npy.py` (modify the paths in that file to point to correct dirs)

@@ -12,7 +12,7 @@ from dense_estimation.resnet import resnet50
 from dense_estimation.output import GaussianScaleMixtureOutput, PowerExponentialOutput
 from dense_estimation.losses import (BerHuLoss, RMSLoss, RelLoss, TestingLosses, HuberLoss,
                                      Log10Loss, DistributionLogLoss)
-from dense_estimation.distributions import GaussianScaleMixture, PowerExponential
+#from dense_estimation.distributions import GaussianScaleMixture, PowerExponential
 from dense_estimation.datasets.nyu_depth_v2 import NYU_Depth_V2
 from dense_estimation.data import get_testing_loader
 from dense_estimation.app.experiment import get_experiment
@@ -55,12 +55,11 @@ def _test(ex, epoch):
     with open('./log/{}/opts.txt'.format(ex), 'r') as f:
         ex_opt = json.load(f)
 
-    dist_map = {
-        'gsm': (GaussianScaleMixture, lambda: GaussianScaleMixtureOutput(ex_opt['num_gaussians'])),
-        'exp': (PowerExponential, lambda: PowerExponentialOutput()),
-    }
-
     if ex_opt['dist'] != '':
+        dist_map = {
+            'gsm': (GaussianScaleMixture, lambda: GaussianScaleMixtureOutput(ex_opt['num_gaussians'])),
+            'exp': (PowerExponential, lambda: PowerExponentialOutput()),
+        }
         distribution, output_unit = dist_map[ex_opt['dist'] ]
         model = resnet50(output=output_unit(), fpn=ex_opt['fpn'], dropout_active=False)
         visualizer = DistributionVisualizer(distribution)

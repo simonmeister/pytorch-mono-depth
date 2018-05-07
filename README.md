@@ -6,8 +6,11 @@ For the official models, see the
 [FCRN-DepthPrediction](https://github.com/iro-cp/FCRN-DepthPrediction) repository.
 This implementation supports data pre-processing, training from scratch, and evaluation. The code currently only supports the NYU Depth v2 dataset, but it should be easy to add other datasets.
 
+Note that there is some code to support depth prediction with uncertainty, however there are some dependencies missing from this repo and i didn't have time to document this. You don't need to worry about this code and can always leave the `--dist` argument set to `''`.
+
 ### TODO
 - upload evaluation performance numbers on NYU Depth
+- document test.py script
 
 ## Setup (Python 3)
 

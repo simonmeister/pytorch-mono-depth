@@ -1,0 +1,8 @@
+/datasets
+/log
+/checkpoints
+/downloads
+*.pyc
+__pycache__
+octave-workspace
+/laina_models

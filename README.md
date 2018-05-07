@@ -16,7 +16,7 @@ This implementation supports data pre-processing, training from scratch, and eva
 
 ### Prepare datasets
 * `python nyud_test_to_npy.py` (modify the paths in that file to point to correct dirs)
-* download NYU Depth v2 raw dataset (~400GB) toolbox
+* download the NYU Depth v2 raw dataset (~400GB) and the toolbox from https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html.
 * generate training dataset with matlab - see process_raw.m
 * `python nyud_raw_train_to_npy.py` (modify the paths in that file to point to correct dirs)
 * modify raw_root in train.py and test.py to point to correct dir

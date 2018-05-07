@@ -11,7 +11,7 @@ from dense_estimation.resnet import resnet50
 from dense_estimation.output import GaussianScaleMixtureOutput, PowerExponentialOutput
 from dense_estimation.losses import (BerHuLoss, RMSLoss, RelLoss, TestingLosses, HuberLoss,
                                      Log10Loss, DistributionLogLoss)
-from dense_estimation.distributions import GaussianScaleMixture, PowerExponential
+#from dense_estimation.distributions import GaussianScaleMixture, PowerExponential
 from dense_estimation.datasets.nyu_depth_v2 import NYU_Depth_V2
 from dense_estimation.data import get_testing_loader, get_training_loader
 from dense_estimation.trainer import Trainer
@@ -57,12 +57,12 @@ if cuda:
 out_size = (208, 256)
 transf_size = (out_size[1], out_size[0])
 
-dist_map = {
-    'gsm': (GaussianScaleMixture, lambda: GaussianScaleMixtureOutput(opt.num_gaussians)),
-    'exp': (PowerExponential, lambda: PowerExponentialOutput())
-}
 
 if opt.dist != '':
+    dist_map = {
+        'gsm': (GaussianScaleMixture, lambda: GaussianScaleMixtureOutput(opt.num_gaussians)),
+        'exp': (PowerExponential, lambda: PowerExponentialOutput())
+    }
     distribution, output_unit = dist_map[opt.dist]
     model = resnet50(output=output_unit(), fpn=opt.fpn)
     visualizer = DistributionVisualizer(distribution)

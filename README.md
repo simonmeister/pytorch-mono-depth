@@ -10,9 +10,9 @@ This implementation supports data pre-processing, training from scratch, and eva
 ## Setup (Python 3)
 
 ### Install prerequisites
-* install pytorch (see pytorch.org)
-* install tensorflow (for tensorboard visualization only - no gpu support required)
-* install python packages: `scipy matplotlib h5py`
+* install [pytorch](https://pytorch.org/)
+* install [tensorflow](https://www.tensorflow.org/) (for tensorboard visualization only - no gpu support required). The easiest way is to just install the pip `tensorflow` package.
+* install python packages with pip: `scipy matplotlib h5py`
 
 ### Prepare datasets
 * `python nyud_test_to_npy.py` (modify the paths in that file to point to correct dirs)

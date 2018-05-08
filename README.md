@@ -12,6 +12,9 @@ Note that there is some code to support uncertainty (variance) prediction, howev
 - upload evaluation performance numbers on NYU Depth
 - document test.py script
 
+### License
+This project is licensed under the MIT License (refer to the LICENSE file for details).
+
 ## Setup (Python 3)
 
 ### Install prerequisites
